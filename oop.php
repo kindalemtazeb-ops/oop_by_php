@@ -2,6 +2,11 @@
 class user{
 public $username="kita";
 public $email="kiata@gmail.com";
+public function __construct($username,$email){
+$this->username='$username';
+$this->email='$email';
+}
+
 public function addfriends(){
     
     return "$this->email adds friends";
@@ -10,12 +15,13 @@ public function addfriends(){
 
 }
 
-$user1=new user();
-$user2=new user('yesh','abebe');
+$user1=new user('aster','aster@gmail.com');
+$user2=new user('asa','asa@gmail.com');
 $user1->username="kindalem";
 $user1->email="kita@gmail.com";
 $user2->username="kase";
 $user2->email="kase@gmail.com";
+
 $user2->username="haland";
 echo "username of user1:". $user1->username;
 echo "<br>";
