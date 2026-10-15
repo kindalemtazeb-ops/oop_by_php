@@ -1,11 +1,36 @@
 <?php
 class user{
+public $username="kita";
+public $email="kiata@gmail.com";
+public function addfriends(){
+    
+    return "$this->email adds friends";
+    return "$this->username adds friends";
+}
 
 }
+
 $user1=new user();
-$user2=new user();
-echo 'the class is:'.get_class($user1);
-echo 'the class is'.get_class($user2);
+$user2=new user('yesh','abebe');
+$user1->username="kindalem";
+$user1->email="kita@gmail.com";
+$user2->username="kase";
+$user2->email="kase@gmail.com";
+$user2->username="haland";
+echo "username of user1:". $user1->username;
+echo "<br>";
+echo "email of user1:".$user1->email;
+echo "<br>";
+echo "username of user2:".$user2->username;
+echo "<br>";
+echo "email of user2:". $user2->email;
+echo "<br>";
+echo $user1->addfriends();
+get_class_vars('user');
+echo "<br>";
+print_r(get_class_vars('user'));
+echo"<br>";
+print_r(get_class_methods('user'));
 ?>
 
 
