@@ -2,6 +2,7 @@
 class User {
     public $username;
     private $email;
+    public $role = "user";
 
     public function __construct($username, $email) {
         $this->username = $username; // Fixed: removed single quotes
@@ -10,6 +11,9 @@ class User {
 
     public function addfriends() {
         return "$this->username adds friends"; // Fixed: removed unreachable return
+    }
+    public function mesage(){
+        return "$this->email sends message";
     }
 
     // Fixed: Moved getemail() INSIDE the class
@@ -26,13 +30,16 @@ class User {
     }
 
 class admmin extends user{
+    public $role="member";
     public $level;
     public function __construct($username, $email, $level){
         $this->level=$level;
         parent::__construct($username,$email);
     }
 
-
+public function mesage(){
+   return $this->getemail() . " sends message";
+}
 }
 $user1 = new User('aster', 'aster@gmail.com');
 $user2 = new User('asa', 'asa@gmail.com');
@@ -41,7 +48,10 @@ echo "username of user3:". $user3->username;
 echo "<br>";
 echo "level of user3:".$user3->level;
 echo "<br>";
-
+echo $user1->role ."<br>";  
+echo $user3->role ."<br>";
+echo $user1->mesage()."<br>";
+echo $user3->mesage()."<br>";
 
 // Fixed: Use the setter method because $email is private, 
 // or make $email public in the class definition.
