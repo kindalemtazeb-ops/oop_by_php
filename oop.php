@@ -1,44 +1,57 @@
 <?php
-class user{
-public $username="kita";
-public $email="kiata@gmail.com";
-public function __construct($username,$email){
-$this->username='$username';
-$this->email='$email';
-}
+class User {
+    public $username;
+    private $email;
 
-public function addfriends(){
+    public function __construct($username, $email) {
+        $this->username = $username; // Fixed: removed single quotes
+        $this->email = $email;       // Fixed: removed single quotes
+    }
+
+    public function addfriends() {
+        return "$this->username adds friends"; // Fixed: removed unreachable return
+    }
+
+    // Fixed: Moved getemail() INSIDE the class
+    public function getemail() {
+        return $this->email;
+    }
     
-    return "$this->email adds friends";
-    return "$this->username adds friends";
-}
+    // Optional: Added a setter if you want to modify private email externally
+    public function setEmail($email) {
+        if(strpos($email,'@')>-1){
+            $this->email=$email;
+        }
+        }
+    }
 
-}
 
-$user1=new user('aster','aster@gmail.com');
-$user2=new user('asa','asa@gmail.com');
-$user1->username="kindalem";
-$user1->email="kita@gmail.com";
-$user2->username="kase";
-$user2->email="kase@gmail.com";
+$user1 = new User('aster', 'aster@gmail.com');
+$user2 = new User('asa', 'asa@gmail.com');
 
-$user2->username="haland";
-echo "username of user1:". $user1->username;
+// Fixed: Use the setter method because $email is private, 
+// or make $email public in the class definition.
+$user1->setEmail("aebemekita@gmail.com");
+// $user2->email = 55; // This would cause an error unless email is public
+
+$user1->username = "kindalem";
+$user2->username = "haland"; // Overwrites previous assignment to "kase"
+
+echo "username of user1: " . $user1->username;
 echo "<br>";
-echo "email of user1:".$user1->email;
+echo "email of user1: " . $user1->getemail();
 echo "<br>";
-echo "username of user2:".$user2->username;
+echo "username of user2: " . $user2->username;
 echo "<br>";
-echo "email of user2:". $user2->email;
+echo "email of user2: " . $user2->getemail();
 echo "<br>";
 echo $user1->addfriends();
-get_class_vars('user');
 echo "<br>";
+
 print_r(get_class_vars('user'));
-echo"<br>";
+echo "<br>";
 print_r(get_class_methods('user'));
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
