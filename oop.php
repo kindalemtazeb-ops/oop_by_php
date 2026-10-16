@@ -8,7 +8,15 @@ class User {
         $this->username = $username; // Fixed: removed single quotes
         $this->email = $email;       // Fixed: removed single quotes
     }
+//clone and destructor methods are optional, but can be added if needed
+public function __destruct(){
+    echo "$this->username has been destroyed.";
+}
+public function __clone(){
+    $this->email=$this->email."clone<br>";
 
+    return "$this->username has bencloned";
+}
     public function addfriends() {
         return "$this->username adds friends"; // Fixed: removed unreachable return
     }
@@ -44,6 +52,8 @@ public function mesage(){
 $user1 = new User('aster', 'aster@gmail.com');
 $user2 = new User('asa', 'asa@gmail.com');
 $user3=new admmin('admin', 'admin3@gmail.com', 6);
+$user4=clone $user3;
+echo $user4->mesage();
 echo "username of user3:". $user3->username;
 echo "<br>";
 echo "level of user3:".$user3->level;
