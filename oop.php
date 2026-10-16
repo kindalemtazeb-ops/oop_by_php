@@ -25,9 +25,23 @@ class User {
         }
     }
 
+class admmin extends user{
+    public $level;
+    public function __construct($username, $email, $level){
+        $this->level=$level;
+        parent::__construct($username,$email);
+    }
 
+
+}
 $user1 = new User('aster', 'aster@gmail.com');
 $user2 = new User('asa', 'asa@gmail.com');
+$user3=new admmin('admin', 'admin3@gmail.com', 6);
+echo "username of user3:". $user3->username;
+echo "<br>";
+echo "level of user3:".$user3->level;
+echo "<br>";
+
 
 // Fixed: Use the setter method because $email is private, 
 // or make $email public in the class definition.
