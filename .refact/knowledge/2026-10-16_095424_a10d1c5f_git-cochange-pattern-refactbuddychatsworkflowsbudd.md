@@ -6,7 +6,7 @@ tags:
 - git
 - pattern
 created: 2026-10-16
-updated: 2026-10-17
+updated: 2026-10-20
 filenames:
 - .refact/buddy/chats/workflows/buddy_docs_gardener.json
 - oop.php
@@ -15,7 +15,7 @@ kind: pattern
 status: proposed
 superseded_by: null
 deprecated_at: null
-review_after: 2026-10-17
+review_after: 2026-10-20
 source_chat_id: null
 created_at: 2026-10-16T06:54:24.148954900+00:00
 summary: null
