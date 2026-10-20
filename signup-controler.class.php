@@ -19,7 +19,34 @@ class signup_controler{
             $result=true;
             }
         return $result;
-        }                                                   
+        }   
+        private  function invaliduid(){
+            $result;
+            if(!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)){
+                $result=false;
+
+            }else{
+                $result=true;
+            }
+            return $result;
+        }   
+        private function invalidemail(){
+            if(!filter_var($this->email,FILTER_VALIDATE_EMAIL)){
+                $result=false;
+            }else{
+                $result=true;
+
+            }
+            return $result;
+        } 
+        private function pwdmatch(){
+            if($this->pwd !==$this->pwdrepeat){
+                $result=false;
+            }else{
+                $result=false;
+            }
+            return $result;
+        }                                          
 }
 
 

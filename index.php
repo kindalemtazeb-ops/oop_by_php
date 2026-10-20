@@ -29,11 +29,7 @@
             <div class="wraper">
                 <div class="index-intro-c1">
                 <div class="vido">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Natus, accusamus accusantium asperiores quos rerum 
-                         placeat est in optio consequuntur
-                         consequatur veniam omnis sint voluptatem ab harum qui
-                          repellendus voluptatibus minima.</p>
+                    
                 </div>
                 <div class="index-intro-c2">
                   <h1>we make<br>profesional<br>gear</h1>
