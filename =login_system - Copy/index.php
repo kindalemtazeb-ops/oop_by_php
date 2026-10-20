@@ -53,19 +53,19 @@
 
             <form action="includes/signup.inc.php" method="post">
                 <input type="text" name="username" placeholder="enter username">
-                <input type="password" name="passward" place
-
-
+                <input type="password" name="passward" placeholder="enter passward">
+                <input type="password" name="confirmpassword" placeholder="confirmpassword">
+                <input type="EMAIL" name="email" placeholder="enter email">
+                <button type="submit" value="submit">SIGN UP</button>
             </form>
         </div>
-        <div class="index-login-c2">
-            <h1>SIGN UP</h1>
-            <form action="signup.inc.php" method="post">
-                <input type="text" name="uid" placeholder="username">
-                <input type="password" name="pwd" placeholder="password">
-                <input type="password" name="pwdrepeat" placeholder="repeat password">
-                <input type="text" name="email" placeholder="email">
-                <button type="submit" name="submit">SIGN UP</button>
+        <div class="index-login-login">
+            <h4>LOGIN</h4>
+            <P>do not have an account yet? SIGN UP here</P>
+            <form action="login.inc.php" method="post">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <button type="submit" name="submit">login</button>
             </form>
         </div>
 </section>
