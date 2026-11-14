@@ -1,5 +1,4 @@
 <?php
-
 // Abstract Parent Class
 abstract class PaymentProcess {
     // Abstract method (has no body, just a signature)
@@ -10,7 +9,6 @@ abstract class PaymentProcess {
         return "--- Official Payment Receipt ---<br>";
     }
 }
-
 // Child Class 1: Credit Card Payment
 class CreditCardPayment extends PaymentProcess {
     // Must implement the abstract method
@@ -18,7 +16,6 @@ class CreditCardPayment extends PaymentProcess {
         return "Successfully paid $" . $amount . " using Credit Card.<br>";
     }
 }
-
 // Child Class 2: PayPal Payment
 class PayPalPayment extends PaymentProcess {
     // Must implement the abstract method
@@ -26,7 +23,6 @@ class PayPalPayment extends PaymentProcess {
         return "Successfully paid $" . $amount . " using PayPal.<br>";
     }
 }
-
 // ---------------------------------------------------------
 
 // Trying to do this will cause an ERROR: $payment = new PaymentProcess(); 
@@ -41,5 +37,4 @@ echo "<br>";
 $paypalPayment = new PayPalPayment();
 echo $paypalPayment->showReceiptHeader();
 echo $paypalPayment->pay(75);
-
 ?>
